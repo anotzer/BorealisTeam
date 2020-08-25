@@ -283,7 +283,7 @@
                     },
                     // dataType: 'JSON',
                     success: function(data) {
-                        // location.reload()
+                        location.reload()
                     },
                     error: function(data) {
                         var errors = data.responseJSON;

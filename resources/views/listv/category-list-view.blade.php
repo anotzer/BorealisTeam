@@ -60,14 +60,13 @@
                 <div class="row justify-content-center">
                     @foreach($category_products as $products)
                         @foreach($products->products as $pr)
-                                {{$pr->id}}
                         <div class="ServicesItem col-12 col-md-6 col-xl-4" >
                             <div class="card" style="background-image: url('{{$pr->image->path}}'); background-size: cover; margin-top: 3rem; border: 1px solid #fff;">
                                 <form action="{{route('order.page', $pr->id)}}" method="get">
                                     <div class="card-body" style="min-height: 222px;">
                                         <div class="card-footer" style="backdrop-filter: blur(5px); border: 1px solid #fff; margin-top: 40%; padding-left: 0;">
-                                            <button type="submit" id="open_order_" style="display: none;">sadasd</button>
-                                            <label for="open_order_" href="#" class="btn col-md-4 text-left shadow-none"></label>
+                                            <button type="submit" id="open_order_{{$pr->id}}" style="display: none;">sadasd</button>
+                                            <label for="open_order_{{$pr->id}}" href="#" class="btn col-md-4 text-left shadow-none"></label>
                                             <a href="#" class="but-buy btn btn-outline-info float-right col-md-4">Buy</a>
                                             <style>
                                                 .card-footer > a {

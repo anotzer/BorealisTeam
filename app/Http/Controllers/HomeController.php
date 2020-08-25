@@ -37,7 +37,7 @@ class HomeController extends Controller
     }
 
     public function category_list_view ($id) {
-        $category_products = Category_Product::where('category_id', $id)->get();
+        $category_products = Category_Product::where('category_id', $id)->orderBy('created_at', 'DESC')->get();
         return view('listv.category-list-view',compact('category_products'));
     }
 
