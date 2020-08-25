@@ -1,0 +1,113 @@
+/*body {*/
+/*    font-family: arial;*/
+/*}*/
+
+/*.flipswitch {*/
+/*    position: relative;*/
+/*    background: white;*/
+/*    width: 50px;*/
+/*    height: 20px;*/
+/*    -webkit-appearance: initial;*/
+/*    border-radius: 3px;*/
+/*    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
+/*    outline: none;*/
+/*    font-size: 14px;*/
+/*    font-family: Trebuchet, Arial, sans-serif;*/
+/*    font-weight: bold;*/
+/*    cursor: pointer;*/
+/*    border: 1px solid #ddd;*/
+/*}*/
+
+/*.flipswitch:after {*/
+/*    position: absolute;*/
+/*    top: 5%;*/
+/*    display: block;*/
+/*    line-height: 32px;*/
+/*    width: 45%;*/
+/*    height: 90%;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*    transition: all 0.3s ease-in 0s;*/
+/*    color: black;*/
+/*    border: #888 1px solid;*/
+/*    border-radius: 3px;*/
+/*}*/
+
+/*.flipswitch:after {*/
+/*    left: 2%;*/
+/*    background-image: linear-gradient(90deg,#3d82f4,#956ff7),linear-gradient(90deg,#3d82f4,#956ff7);*/
+/*    content: "";*/
+/*}*/
+
+/*.flipswitch:checked:after {*/
+/*    left: 53%;*/
+/*    background-image: linear-gradient(90deg,#3d82f4,#956ff7),linear-gradient(90deg,#3d82f4,#956ff7);*/
+/*}*/
+
+
+
+input[type=checkbox] {
+    display: none;
+}
+.checkbox label:before {
+    border-radius: 3px;
+}
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;
+}
+
+
+.title {
+    /* Чтобы спрятать часть линий, которые
+    ** будут вылазить за пределы блока */
+    overflow: hidden;
+    /* Выравнивание заголовка по центру,
+    ** можно использовать left, right */
+    text-align: center;
+    /* Тут можно добавить другие стили для заголовка */
+    font-size: 30px;
+}
+.title span {
+    /* Стили тега обертки для заголовков
+    ** в несколько строк */
+    display: inline-block;
+    vertical-align: middle;
+}
+.title:before,
+.title:after {
+    /* Обязательно указываем пустое свойство content,
+    ** иначе псевдоэлементы не появятся на сайте */
+    content: "";
+    /* Указываем что наши линии будут строчно-блочные и
+    ** выравнивание по высоте - по центру */
+    display: inline-block;
+    vertical-align: middle;
+    /* Задаем ширину 100% и выбираем высоту линии,
+    ** в нашем примере она равна 4 пикселям */
+    width: 100%;
+    height: 1px;
+    /* Добавляем цвет для линии */
+    background-color: rgba(255,255,255,.4);
+    /* Добавляем пседоэлемантам возможность изменить
+    ** позицию линии, для создания отступов от текста */
+    position: relative;
+}
+.title:before {
+    /* Смещаем левую линию на 100% влево, чтобы линия
+    ** встала рядом с текстом слева */
+    margin-left: -100%;
+    /* Указываем в пикселях отступ линии от текста заголовка */
+    left: -14px;
+}
+.title:after {
+    /* Смещаем правую линию на 100% вправо, чтобы
+    ** линия встала рядом с текстом справа */
+    margin-right: -100%;
+    /* Указываем в пикселях отступ линии от текста заголовка */
+    right: -14px;
+}
