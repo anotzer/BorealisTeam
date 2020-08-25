@@ -51,7 +51,9 @@
                     @foreach($categories as $category)
                         @if($category->active == 'activated')
                             <li class="type-button">
-                                <a href="/">{{$category->title}}</a>
+                                    <a href="{{route('category.list.view', $category->id)}}">
+                                        {{$category->title}}
+                                    </a>
                             </li>
                         @endif
                     @endforeach

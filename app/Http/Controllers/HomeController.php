@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Category_Product;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -34,4 +35,10 @@ class HomeController extends Controller
         $categories = Category::all();
         return view('listv.list-view',compact('products'),compact('categories'));
     }
+
+    public function category_list_view ($id) {
+        $category_products = Category_Product::where('category_id', $id)->get();
+        return view('listv.category-list-view',compact('category_products'));
+    }
+
 }

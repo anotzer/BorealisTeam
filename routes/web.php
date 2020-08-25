@@ -35,6 +35,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::post('create/service', 'AdminController@create_service')->name('create.service');
 Route::post('create/category', 'CategoryController@create')->name('create.category');
 Route::get('list/view', 'HomeController@list_view')->name('list.view');
+Route::get('category/list/view/{id}', 'HomeController@category_list_view')->name('category.list.view');
 Route::post('create/disable-button', 'AdminController@create_dis_button')->name('create_dis_button');
 //order page
 Route::get('order/page/{id}', 'OrderController@index')->name('order.page');
